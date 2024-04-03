@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace CIS305_Web_Master_Project.Demos.WageCalculator   
+namespace CIS305_Web_Master_Project.Demos.WageCalculator
 {
     public partial class WageCalculator : System.Web.UI.Page
     {
@@ -16,13 +16,11 @@ namespace CIS305_Web_Master_Project.Demos.WageCalculator
 
         protected void Submit_Click(object sender, EventArgs e)
         {
-
-            //============================INPUTS ========================
             //Declare variables
             //These are variables to capture user inputs(still good)
             string consultantName;
             string jobTitle;
-            double baseBillingRate;  //conditional based on the job title.
+            double baseBillingRate;
             bool isMCSD = false;
             double workHours;
             string consultantSkills = "";
@@ -37,36 +35,33 @@ namespace CIS305_Web_Master_Project.Demos.WageCalculator
             jobTitle = JobTitle.SelectedValue;
             workHours = double.Parse(WorkHours.Text);
 
-            if (MCSDCertificate.Text == "Yes")
+            if (MSCDCertificate.Text == "Yes")
             {
                 isMCSD = true;
             }
 
-            //Concatenante the selected skills into one text string
-
             foreach (ListItem item in SkillsList.Items)
             {
-                if (item.Selected) //Whether it's selected or not?
+                if (item.Selected)
                 {
                     consultantSkills += item.Text + ", ";
                 }
             }
 
-            //======================PROCESSING========================
-            //Here, we're using the black box approach (class)
+            //ResultHTML.Text = consultantName + ", " + jobTitle + ", " + workHours;
 
+            //==================Processing====================
             //Instantiate an employee object using a custom constructor. Make sure to follow the prompt.
             Consultant employee = new Consultant(consultantName, jobTitle, consultantSkills, isMCSD, workHours);
+            
+            //Let's call the method to calculate
 
+            //This is required if you wish to use the weeklyWage in the output in the main. 
+            weeklyWage = employee.CalculateWage(workHours);
 
+            //==================Output=========================            
 
-
-
-
+            ResultHTML.Text = employee.DisplayResult();
         }
     }
-
-    //Option 1 - Create your Consultant Class here.
-
 }
-
