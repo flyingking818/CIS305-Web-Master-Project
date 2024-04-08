@@ -57,7 +57,7 @@ namespace CIS305_Web_Master_Project.Demos.WageCalculator
             //Let's call the method to calculate
 
             //This is required if you wish to use the weeklyWage in the output in the main. 
-            weeklyWage = employee.CalculateWage(workHours);
+            //weeklyWage = employee.CalculateWage(workHours);
 
             //==================Output=========================            
 

@@ -58,10 +58,12 @@ namespace CIS305_Web_Master_Project.Demos.WageCalculator
             //Instantiate an employee object using a custom constructor. Make sure to follow the prompt.
             Consultant employee = new Consultant(consultantName, jobTitle, consultantSkills, isMCSD, workHours);
 
+            //This is preferred if you wish to use the outcome of the method somewhere else.
+            //weeklyWage = employee.CalculateWage(workHours);
 
-
-
-
+            //isFairPay = Assessment.Evaluate(weeklyWage)
+            
+            ResultHTML.Text = employee.DisplayResult();
 
         }
     }

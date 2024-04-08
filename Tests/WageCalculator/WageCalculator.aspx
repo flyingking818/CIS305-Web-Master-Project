@@ -4,7 +4,7 @@
         <tr>
             <td style="width:300px; font-size:x-large"> Consultant Name:  </td>
             <td style="width:700px">
-                <asp:TextBox ID="Name" runat="server"></asp:TextBox>
+                <asp:TextBox ID="Name" runat="server"></asp:TextBox><asp:RequiredFieldValidator runat="server" ErrorMessage="Please enter a valid name!" ControlToValidate="Name" ForeColor="Red"></asp:RequiredFieldValidator>
 
             </td>
         </tr>        
@@ -36,11 +36,11 @@
             <td style="width: 700px">&nbsp;<asp:RadioButtonList runat="server" ID="MSCDCertificate">
                 <asp:ListItem>Yes</asp:ListItem>
                 <asp:ListItem>No</asp:ListItem>
-            </asp:RadioButtonList></td>
+            </asp:RadioButtonList><asp:RequiredFieldValidator runat="server" ErrorMessage="Please specify the MCSD status!" ForeColor="Red" ControlToValidate="MSCDCertificate"></asp:RequiredFieldValidator></td>
         </tr>
         <tr>
             <td style="width: 300px; font-size: x-large">&nbsp;Work Hours/Week:</td>
-            <td style="width: 700px">&nbsp;<asp:TextBox runat="server" ID="WorkHours"></asp:TextBox></td>
+            <td style="width: 700px">&nbsp;<asp:TextBox runat="server" ID="WorkHours"></asp:TextBox><asp:RangeValidator runat="server" ErrorMessage="Please enter a number between 0 and 100!" ControlToValidate="WorkHours" ForeColor="Red" MinimumValue="0" MaximumValue="100" SetFocusOnError="True" Type="Double"></asp:RangeValidator></td>
         </tr>
         <tr>
             <td style="width: 300px; font-size: x-large">

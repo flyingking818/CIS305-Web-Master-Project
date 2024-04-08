@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.SqlServer.Server;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -85,6 +86,8 @@ namespace CIS305_Web_Master_Project.Demos.WageCalculator
 
         public virtual string DisplayResult()
         {
+            //Can do the calculate method here.
+            WeeklyWage = CalculateWage(WorkHours);
             //Traditionally, in ASP.NET we use string concatenation to build an HTML output.
 
             //Remove the extra trailing characters of the consultant skills string
@@ -96,7 +99,7 @@ namespace CIS305_Web_Master_Project.Demos.WageCalculator
             string certification = IsMCSD ? "Certifed" : "Not Certified";
 
             string htmlOutput = "Thank you, <strong>" + Name + "</strong> for using the wage calculator! ";
-            htmlOutput += "Based on your selected profile - " + JobTitle + ", your MCSD certifiate status (" + certification + "), ";
+            htmlOutput += "Based on your selected profile - " + GetJobTitleText(JobTitle) + ", your MCSD certifiate status (" + certification + "), ";
             htmlOutput += " skills applied - " + SkillSets + ", and " + WorkHours + " work hours,";
             htmlOutput += " your weekly salary is - <strong>" + WeeklyWage.ToString("C") + "</strong>.";
 
@@ -108,6 +111,22 @@ namespace CIS305_Web_Master_Project.Demos.WageCalculator
             }
 
             return htmlOutput;
+        }
+
+        public string GetJobTitleText(string jobTitle)
+        {
+            switch (jobTitle) {
+                case "JobCode1":
+                    return "Developer";                    
+                case "JobCode2":
+                    return "Analyst";                   
+                case "JobCode3":
+                    return "Architect";                   
+                case "JobCode4":
+                    return "Project Lead";                   
+                default:
+                    return "Error";                   
+            }
         }
 
     }

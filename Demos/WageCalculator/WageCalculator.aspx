@@ -2,9 +2,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <table>
         <tr>
-            <td style="width:300px; font-size:x-large"> Consultant Name:  </td>
+            <td style="width:300px; font-size:x-large"> Consultant Name*:  </td>
             <td style="width:700px">
-                <asp:TextBox ID="Name" runat="server"></asp:TextBox>
+                <asp:TextBox ID="Name" runat="server"></asp:TextBox><asp:RequiredFieldValidator runat="server" ErrorMessage="Please enter a name!" ControlToValidate="Name" ForeColor ="Red"></asp:RequiredFieldValidator>
 
             </td>
         </tr>
@@ -22,6 +22,7 @@
              </td>
         </tr>
         <tr>
+            
             <td style="width: 300px; font-size: x-large">&nbsp;Consultant Skills:</td>
             <td style="width: 700px">
                 <asp:CheckBoxList runat="server" ID="SkillsList">
@@ -35,17 +36,20 @@
                 </asp:CheckBoxList>&nbsp;</td>
         </tr>
         <tr>
-            <td style="width: 300px; font-size: x-large">&nbsp;MCSD Certificate?</td>
+            <td style="width: 300px; font-size: x-large"> MCSD Certificate?*</td>
             <td style="width: 700px">
                 <asp:RadioButtonList runat="server" ID="MCSDCertificate" RepeatDirection="Horizontal">
                     <asp:ListItem>Yes</asp:ListItem>
                     <asp:ListItem>No</asp:ListItem>
-                </asp:RadioButtonList>&nbsp;</td>
+                </asp:RadioButtonList>
+                <asp:RequiredFieldValidator runat="server" ErrorMessage="Please specify your MCSD status!" ForeColor="Red" ControlToValidate="MCSDCertificate"></asp:RequiredFieldValidator>&nbsp;</td>
         </tr>
         <tr>
-            <td style="width: 300px; font-size: x-large">&nbsp;Work Hours/Week:</td>
+            <td style="width: 300px; font-size: x-large"> Work Hours/Week*:</td>
             <td style="width: 700px">
-                <asp:TextBox runat="server" ID="WorkHours"></asp:TextBox>&nbsp;</td>
+                <asp:TextBox runat="server" ID="WorkHours">
+
+                </asp:TextBox>&nbsp;<asp:RangeValidator runat="server" ErrorMessage="Please enter a number between 0 and 100!" ForeColor="Red" MaximumValue="100" MinimumValue="0" ControlToValidate="WorkHours" Type="Double"></asp:RangeValidator></td>
         </tr>
         <tr>
             <td style="width: 300px; font-size: x-large">

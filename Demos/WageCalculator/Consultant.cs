@@ -82,6 +82,9 @@ namespace CIS305_Web_Master_Project.Demos.WageCalculator
 
         public virtual string DisplayResult()
         {
+            //Option 1 - call the Calculate method within the class (internal call)
+            WeeklyWage = CalculateWage(WorkHours);
+
             //Traditionally, in ASP.NET we use string concatenation to build an HTML output.
 
             //Remove the extra trailing characters of the consultant skills string
