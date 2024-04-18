@@ -76,5 +76,14 @@ namespace CIS305_Web_Master_Project.Demos.WageCalculator
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label ResultHTML;
+
+        /// <summary>
+        /// DBResult control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label DBResult;
     }
 }

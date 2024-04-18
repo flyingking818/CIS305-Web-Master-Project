@@ -123,6 +123,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Demos\WageCalculator\WageCalculator.aspx" />
+    <Content Include="Demos\WageCalculator\WageEntrySummary.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -211,12 +212,20 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Demos\WageCalculator\Consultant.cs" />
+    <Compile Include="Demos\WageCalculator\DBContext.cs" />
     <Compile Include="Demos\WageCalculator\WageCalculator.aspx.cs">
       <DependentUpon>WageCalculator.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Demos\WageCalculator\WageCalculator.aspx.designer.cs">
       <DependentUpon>WageCalculator.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Demos\WageCalculator\WageEntrySummary.aspx.cs">
+      <DependentUpon>WageEntrySummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Demos\WageCalculator\WageEntrySummary.aspx.designer.cs">
+      <DependentUpon>WageEntrySummary.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

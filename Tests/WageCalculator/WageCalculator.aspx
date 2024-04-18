@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="WageCalculator.aspx.cs" Inherits="CIS305_Web_Master_Project.Demos.WageCalculator.WageCalculator" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+   
+    <asp:Panel ID ="WagePanel"
     <table>
         <tr>
             <td style="width:300px; font-size:x-large"> Consultant Name:  </td>
@@ -44,11 +46,21 @@
         </tr>
         <tr>
             <td style="width: 300px; font-size: x-large">
-                <asp:Button runat="server" Text="Calculate and Save" ID="Submit" OnClick="Submit_Click"></asp:Button>&nbsp;</td>
-            <td style="width: 700px">&nbsp;<asp:Label runat="server" Text="Label" ID="ResultHTML"></asp:Label></td>
+                <asp:Button runat="server" Text="Calculate" ID="Submit" OnClick="Submit_Click"></asp:Button>&nbsp;</td>
+            <td style="width: 700px">&nbsp;<asp:Label runat="server" Text="Label" ID="ResultHTML"></asp:Label>
+
+                <br />
+                <asp:Label runat="server" Text="" ID="DBResult"></asp:Label>
+            </td>
+       
+            
         </tr>
+        
 
     </table>
+</asp:Panel>
+
+
 
 
 

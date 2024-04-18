@@ -55,7 +55,11 @@
             <td style="width: 300px; font-size: x-large">
                 <asp:Button runat="server" Text="Calculate and Save" ID="Submit" OnClick="Submit_Click"></asp:Button>&nbsp;</td>
             <td style="width: 700px">
-                <asp:Label runat="server" Text="" ID="ResultHTML"></asp:Label>&nbsp;</td>
+                <asp:Label runat="server" Text="" ID="ResultHTML"></asp:Label>&nbsp;
+                <br />
+                <asp:Label runat="server" Text="" ID="DBResult"></asp:Label>&nbsp;
+
+            </td>
         </tr>
 
     </table>

@@ -62,6 +62,23 @@ namespace CIS305_Web_Master_Project.Demos.WageCalculator
             //==================Output=========================            
 
             ResultHTML.Text = employee.DisplayResult();
+
+            //==================Save the Wage Entry into a DB=======
+            //Let's use a class approach to save the consultant into the DB
+            DBContext db = new DBContext("misapps.flagler.edu", "jwang", "Password#1", "jwang");
+
+            string dbResult = db.CreateWageEntry(employee);
+            if (dbResult == "Success")
+                DBResult.Text = "The wage entry has been successfully saved.";
+            else
+                DBResult.Text = dbResult;
+
+
+        }
+
+        protected void Save_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

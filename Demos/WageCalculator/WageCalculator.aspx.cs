@@ -65,6 +65,16 @@ namespace CIS305_Web_Master_Project.Demos.WageCalculator
             
             ResultHTML.Text = employee.DisplayResult();
 
+            //DB Operation
+            DBContext db = new DBContext("misapps.flagler.edu", "jwang", "Password#1", "jwang");
+
+            string dbStatus = db.CreateWageEntry(employee);
+            if (dbStatus == "Success")
+                DBResult.Text = "Your wage entry has been successfully saved.";
+            else
+                DBResult.Text = dbStatus;
+                
+
         }
     }
 
